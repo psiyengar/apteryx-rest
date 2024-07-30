@@ -755,7 +755,6 @@ def test_restconf_query_field_mixed_index_1():
     """)
 
 
-@pytest.mark.skip(reason="Needs a fix to query result to json conversion")
 def test_restconf_query_field_mixed_index_2():
     response = requests.get(f"{server_uri}{docroot}/data/test/animals?fields=animal(mouse/name;type)", verify=False, auth=server_auth, headers=get_restconf_headers)
     print(json.dumps(response.json(), indent=4, sort_keys=True))
