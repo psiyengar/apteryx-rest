@@ -836,6 +836,10 @@ rest_api_get (int flags, const char *path, const char *if_none_match, const char
     }
 
     json_string = json_dumps (json, JSON_ENCODE_ANY);
+
+#ifndef RESTCONF_DEBUG
+    printf("restconf_rest: %s: %u: json_string=%s\n", __func__, __LINE__, json_string ?:"(none)");
+#endif
 exit:
     if (logging)
         log_get_head (flags, path, remote_user, remote_addr, rc);
