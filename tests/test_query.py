@@ -723,20 +723,33 @@ def test_restconf_query_field_mixed_index_1():
     assert response.json() == json.loads("""
 {
     "animals": {
-        "animal": {
-            "cat": {
-                "type": "animal-testing-types:1"
+        "animal": [
+            {
+                "cat": {
+                    "type": "animal-testing-types:big"
+                }
             },
-            "hamster": {
-                "type": "animal-testing-types:2"
+            {
+                "hamster": {
+                    "type": "animal-testing-types:little"
+                }
             },
-            "mouse": {
-                "name": "mouse"
+            {
+                "mouse": {
+                    "name": "mouse"
+                }
             },
-            "parrot": {
-                "type": "animal-testing-types:1"
+            {
+                "mouse": {
+                    "type": "animal-testing-types:little"
+                }
+            },
+            {
+                "parrot": {
+                    "type": "animal-testing-types:big"
+                }
             }
-        }
+        ]
     }
 }
     """)
