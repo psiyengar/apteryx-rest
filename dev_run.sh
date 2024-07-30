@@ -1,4 +1,6 @@
 #!/bin/bash
+set -x
+
 ROOT=`pwd`
 ACTION=$1
 
